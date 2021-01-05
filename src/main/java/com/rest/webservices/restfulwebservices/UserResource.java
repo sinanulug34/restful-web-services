@@ -30,6 +30,4 @@ public class UserResource {
             URI location =ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedUser.getId()).toUri();
             return ResponseEntity.created(location).build();
         }
-
-    //https://lankydan.dev/2017/04/02/simple-spring-boot-post
 }
