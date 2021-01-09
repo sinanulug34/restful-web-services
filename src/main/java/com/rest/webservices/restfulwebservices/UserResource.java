@@ -1,6 +1,5 @@
 package com.rest.webservices.restfulwebservices;
 
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -29,8 +28,13 @@ public class UserResource {
         @PostMapping("/users")
         public ResponseEntity<Object> createUser(@RequestBody User user){
             User savedUser=userService.save(user);
-
             URI location =ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedUser.getId()).toUri();
             return ResponseEntity.created(location).build();
         }
+    @DeleteMapping("/users/{id}")
+    public void deleteUser(@PathVariable int id){
+        User user = userService.deleteById(id);
+        if (user==null)
+            throw new UserNotFoundException("id -" + id);
+    }
 }
