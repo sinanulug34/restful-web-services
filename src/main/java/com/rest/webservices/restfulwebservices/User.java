@@ -1,10 +1,14 @@
 package com.rest.webservices.restfulwebservices;
 
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class User {
     private Integer id;
+    @Size(min =3,message = "User name should have at least 3 chars")
     private String name;
+    @Past
     private Date birthadate;
 
     public User(Integer id, String name, Date birthadate) {
@@ -12,7 +16,6 @@ public class User {
         this.name = name;
         this.birthadate = birthadate;
     }
-
     public Integer getId() {
         return id;
     }
