@@ -33,9 +33,6 @@ public class UserResource {
         ControllerLinkBuilder link =
                 linkTo(methodOn(this.getClass()).retriveAllUsers());
         resource.add(link.withRel("all-users").withType("GET"));
-
-
-
         return resource;
     }
         @PostMapping("/users")
