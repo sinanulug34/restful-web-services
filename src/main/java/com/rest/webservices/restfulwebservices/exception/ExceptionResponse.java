@@ -25,3 +25,4 @@ public class ExceptionResponse {
         return details;
     }
 }
+
