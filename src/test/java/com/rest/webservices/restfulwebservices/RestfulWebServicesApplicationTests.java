@@ -4,10 +4,13 @@ import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RestfulWebServicesApplicationTests {
+public class RestfulWebServicesApplicationTests {
 
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
+	}
+
+	public RestfulWebServicesApplicationTests() {
 	}
 
 }
