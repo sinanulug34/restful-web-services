@@ -31,8 +31,8 @@ public class FilteringController {
     //field2,field3
     @GetMapping("/filtering-list")
     public MappingJacksonValue retrieveListOfSomeBeans() {
-      List<SomeBean> list = Arrays.asList(new SomeBean("value1","value2","value3"),
-              new SomeBean("value12","value22","value32"));
+        List<SomeBean> list = Arrays.asList(new SomeBean("value1", "value2", "value3"),
+                new SomeBean("value12", "value22", "value32"));
 
         SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter
                 .filterOutAllExcept("field2", "field3");

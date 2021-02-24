@@ -6,11 +6,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class RestfulWebServicesApplicationTests {
 
-	@Test
-	public void contextLoads() {
-	}
+    @Test
+    public void contextLoads() {
+    }
 
-	public RestfulWebServicesApplicationTests() {
-	}
+    public RestfulWebServicesApplicationTests() {
+    }
 
 }
