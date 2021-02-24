@@ -3,14 +3,21 @@ package com.rest.webservices.restfulwebservices;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
 @ApiModel("All details about the user.")
+@Entity
 public class User {
+    @Id
+    @GeneratedValue
     private Integer id;
-    @Size(min =3,message = "User name should have at least 3 chars")
+
+    @Size(min = 3, message = "User name should have at least 3 chars")
     @ApiModelProperty(notes = "Name should be at least 3 chars")
     private String name;
     @Past
@@ -22,6 +29,11 @@ public class User {
         this.name = name;
         this.birthadate = birthadate;
     }
+
+    public User() {
+
+    }
+
     public Integer getId() {
         return id;
     }
